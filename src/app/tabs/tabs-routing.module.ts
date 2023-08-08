@@ -8,27 +8,35 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'top-rated',
+        loadChildren: () => import('../top-rated/top-rated.module').then( m => m.TopRatedPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'upcoming',
+        loadChildren: () => import('../upcoming/upcoming.module').then( m => m.UpcomingPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'popular',
+        loadChildren: () => import('../popular/popular.module').then( m => m.PopularPageModule)
+      },
+      {
+        path: 'genre',
+        loadChildren: () => import('../genre/genre.module').then( m => m.GenrePageModule)
+      },
+      {
+        path: 'about',
+        loadChildren: () => import('../about/about.module').then( m => m.AboutPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/popular',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/popular',
     pathMatch: 'full'
   }
 ];
